@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Core.Utilities.Result;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -31,9 +31,15 @@ namespace Business.Concrete
             }
         }
 
+        public IResult Delete(Car car)
+        {
+            _carDal.Delete(car);
+            return new SuccessResult();
+        }
+
         public IDataResult<List<Car>> GelAll()
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),"Arabalar listelendi");
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
         public IDataResult<List<CarDetialDto>> GetCarDetials()
@@ -49,6 +55,12 @@ namespace Business.Concrete
         public IDataResult<List<Car>> GetCarsByColorId(int colorId)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == colorId));
+        }
+
+        public IResult Update(Car car)
+        {
+            _carDal.Update(car);
+            return new SuccessResult();
         }
     }
 }

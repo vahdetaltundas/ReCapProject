@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities.Result
+namespace Core.Utilities.Results
 {
     public class SuccessDataResult<T>:DataResult<T>
     {
@@ -14,11 +14,11 @@ namespace Core.Utilities.Result
         {
 
         }
-        public SuccessDataResult(string message) : base(default, true, message)
+        public SuccessDataResult(string message):base(default,true,message)
         {
 
         }
-        public SuccessDataResult() : base(default, true)
+        public SuccessDataResult():base(default,true)
         {
 
         }

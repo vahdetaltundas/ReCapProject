@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities.Result
+namespace Core.Utilities.Results
 {
     public class DataResult<T> : Result, IDataResult<T>
     {
@@ -10,7 +10,7 @@ namespace Core.Utilities.Result
         {
             Data = data;
         }
-        public DataResult(T data,bool success):base(success)
+        public DataResult(T data, bool success):base(success)
         {
             Data = data;
         }
