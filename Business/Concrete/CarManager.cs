@@ -20,15 +20,9 @@ namespace Business.Concrete
 
         public IResult Add(Car car)
         {
-            if(car.Description.Length>2 && car.DailyPrice > 0)
-            {
-                _carDal.Add(car);
-                return new SuccessResult("Araba eklendi");
-            }
-            else
-            {
-                return new ErrorResult("Araba eklenmedi");
-            }
+
+            _carDal.Add(car);    
+            return new SuccessResult("Araba eklendi");
         }
 
         public IResult Delete(Car car)
