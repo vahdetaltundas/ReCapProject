@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         {
             _userService = userService;
         }
-
+        
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
