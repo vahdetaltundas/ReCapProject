@@ -21,5 +21,27 @@ namespace Business.Concrete
             Console.WriteLine("Eklendi");
             return new SuccessResult();
         }
+
+        public IResult Delete(Rental entity)
+        {
+            _rentalDal.Delete(entity);
+            return new SuccessResult();
+        }
+
+        public IDataResult<List<Rental>> GetAll()
+        {
+            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
+        }
+
+        public IDataResult<Rental> GetById(int id)
+        {
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == id));
+        }
+
+        public IResult Update(Rental entity)
+        {
+            _rentalDal.Update(entity);
+            return new SuccessResult();
+        }
     }
 }
